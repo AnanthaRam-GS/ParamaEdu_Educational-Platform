@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management</title>
+    <link rel="stylesheet" href="style-AssignmentSubmission.css">
+</head>
+<body>
+    <section class="main">
+        <div class="main-top">
+            <h1>Assignments</h1>  
+        </div>
+        <div class="SubjectCards">
+            <div class="Cards">
+                <h3>Subject 1</h3>
+                <h4>Course A</h4>
+                <div class="ViewButton">
+                    <a href="AssignmentGiven-Frame-All Assignments.html" target="contentFrame"><button>Give Assignments</button></a>
+                </div>
+            </div>
+            <div class="Cards">
+                <h3>Subject 2</h3>
+                <h4>Course B</h4>
+                <div class="ViewButton">
+                    <a href="AssignmentGiven-Frame-All Assignments.html" target="contentFrame"><button>Give Assignments</button></a>
+                </div>
+            </div>
+            <div class="Cards">
+                <h3>Subject 3</h3>
+                <h4>Course C</h4>
+                <div class="ViewButton">
+                    <a href="AssignmentGiven-Frame-All Assignments.html" target="contentFrame"><button>Give Assignments</button></a>
+                </div>
+            </div>
+            <div class="Cards">
+                <h3>Subject 4</h3>
+                <h4>Course D</h4>
+                <div class="ViewButton">
+                    <a href="AssignmentGiven-Frame-All Assignments.html" target="contentFrame"><button>Give Assignments</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <iframe id="contentFrame" style="width: 100%; height: 600px; border: none;"></iframe>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var viewButtons = document.querySelectorAll(".ViewButton button");
+
+        viewButtons.forEach(function(button, index) {
+            button.addEventListener("click", function() {
+                var urls = [
+                    "AssignmentSubmission-Frame-All Assignments.html",
+                    "subject2.html",
+                    "subject3.html",
+                    "subject4.html"
+                ];
+
+                document.getElementById("contentFrame").src = urls[index];
+            });
+        });
+    });
+    </script>
+</body>
+</html>
