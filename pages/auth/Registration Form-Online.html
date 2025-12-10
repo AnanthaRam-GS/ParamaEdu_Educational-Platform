@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-RegistrationForm.css">
+</head>
+<body>
+<div class="container">
+    <div class="title"><a href="Student's Home.html">Registration</a></div>
+    <form id="registrationForm" action="Student's Home.html">
+        <div class="input-box">
+            <span class="details">Name</span>
+            <input type="text" id="name" placeholder="Enter Your Name">
+        </div>
+        <div class="input-box">
+            <span class="details">Father Name</span>
+            <input type="text" id="fatherName" placeholder="Enter Your Father's Name">
+        </div>
+        <div class="input-box">
+            <span class="details">Mother Name</span>
+            <input type="text" id="motherName" placeholder="Enter Your Mother's Name">
+        </div>
+        <div class="input-box">
+            <span class="details">Email ID</span>
+            <input type="email" id="email" placeholder="Enter Your Email">
+        </div>
+        <div class="input-box">
+            <span class="details">Contact Number</span>
+            <input type="tel" id="contactNumber" placeholder="Enter Your Contact Number">
+        </div>
+        <div class="input-box">
+            <span class="details">Date Of Birth</span>
+            <input type="date" id="dob">
+        </div>
+        <div class="input-box">
+            <span class="details">Address</span>
+            <input type="text" id="address" placeholder="Enter Your Address">
+        </div>
+        <div class="input-box">
+            <span class="details">Nearest Centre</span>
+            <select id="nearestCentre">
+                <option value="" disabled selected>Select your nearest center</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Kochi">Pune</option>
+                <option value="Madurai">Madurai</option>
+                <option value="Trivandrum">Banglore</option>
+                <option value="Amaravathi">Trivandrum</option>
+            </select>
+        </div>
+        <div class="gender-details">
+            <span class="gender-title">Gender</span>
+            <div class="category">
+                <label>
+                    <input type="radio" name="gender" value="male">
+                    <span class="gender">Male</span>
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="female">
+                    <span class="gender">Female</span>
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="prefer-not-say">
+                    <span class="gender">Prefer Not To Say</span>
+                </label>
+            </div>
+        </div>
+        <div class="button">
+            <input type="submit" class="Submit" value="Register">
+        </div>
+    </form>
+</div>
+
+<script>
+document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const fatherName = document.getElementById('fatherName').value.trim();
+    const motherName = document.getElementById('motherName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const contactNumber = document.getElementById('contactNumber').value.trim();
+    const dob = document.getElementById('dob').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const nearestCentre = document.getElementById('nearestCentre').value;
+    const gender = document.querySelector('input[name="gender"]:checked');
+
+    const nameRegex = /^[A-Za-z\s]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^\d{10}$/;
+
+    if (!name) {
+        alert('Please enter your name');
+        return;
+    }
+    if (!nameRegex.test(name)) {
+        alert('Name should contain only letters and spaces');
+        return;
+    }
+    if (!fatherName) {
+        alert('Please enter your father\'s name');
+        return;
+    }
+    if (!nameRegex.test(fatherName)) {
+        alert('Father\'s name should contain only letters and spaces');
+        return;
+    }
+    if (!motherName) {
+        alert('Please enter your mother\'s name');
+        return;
+    }
+    if (!nameRegex.test(motherName)) {
+        alert('Mother\'s name should contain only letters and spaces');
+        return;
+    }
+    if (!email) {
+        alert('Please enter your email');
+        return;
+    }
+    if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address');
+        return;
+    }
+    if (!contactNumber) {
+        alert('Please enter your contact number');
+        return;
+    }
+    if (!phoneRegex.test(contactNumber)) {
+        alert('Contact number should be exactly 10 digits');
+        return;
+    }
+    if (!dob) {
+        alert('Please enter your date of birth');
+        return;
+    }
+    if (!address) {
+        alert('Please enter your address');
+        return;
+    }
+    if (!nearestCentre) {
+        alert('Please select your nearest center');
+        return;
+    }
+    if (!gender) {
+        alert('Please select your gender');
+        return;
+    }
+
+    alert('Form submitted successfully');
+    // Here you can add code to submit the form data to the server
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ParamaEdu Registration</title>
+  <link href="style-Register.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
+  <style>
+ 
+    /* Global Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      align-items: center;
+      color: var(--font-color);
+      display: grid;
+      font-family: var(--font-family);
+      font-size: 14px;
+      font-weight: 400;
+      height: 100vh;
+      justify-items: center;
+      width: 100vw;
+    }
+
+    .signup-container {
+      display: grid;
+      grid-template-areas: "left right";
+      max-width: 900px;
+    }
+
+    .left-container {
+      background: var(--secondary-bg-color);
+      overflow: hidden;
+      padding: 40px 0 0 0;
+      position: relative;
+      text-align: center;
+      width: 300px;
+    }
+
+    .left-container h1 {
+      color: var(--font-color);
+      display: inline-block;
+      font-size: 35px;
+    }
+
+    .left-container h1 i {
+      background: var(--primary-bg-color);
+      border-radius: 50%;
+      color: var(--secondary-bg-color);
+      font-size: 24px;
+      margin-right: 5px;
+      padding: 10px;
+      transform: rotate(-45deg);
+    }
+
+    .left-container .brand-ambassador {
+      bottom: -5px;
+      position: absolute;
+      text-align: center;
+      width: 58%;
+      padding-top: 20px;
+    }
+
+    .left-container .brand-ambassador img {
+      border-radius: 50%;
+      width: 100%;
+      padding-right: 30px;
+    }
+
+    .right-container {
+      background: lighten(var(--primary-bg-color), 5%);
+      display: grid;
+      grid-template-areas: "." ".";
+      width: 500px;
+      padding: 10px;
+    }
+
+    .right-container header h1:nth-of-type(1) {
+      color: var(--font-color);
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    .right-container .form-group {
+      margin-bottom: 20px;
+    }
+
+    .right-container .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .right-container .form-group input,
+    .right-container .form-group select {
+      width: calc(100% - 20px);
+      padding: 10px;
+      border: 1px solid var(--form-border-color);
+      border-radius: 4px;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+
+    .right-container .form-group input:focus,
+    .right-container .form-group select:focus {
+      outline: none;
+      border-color: var(--primary-bg-color);
+    }
+
+    .right-container footer {
+      align-items: center;
+      background: #fff;
+      display: grid;
+      padding: 10px 40px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .right-container footer button {
+      border: none;
+      height: 38px;
+      line-height: 38px;
+      width: 100%;
+      border-radius: 19px;
+      font-family: var(--font-family);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .right-container footer button#login {
+      background-color: #5966C2;
+    }
+
+    .right-container footer button#change-password {
+      background-color: #FFB100;
+    }
+
+    .right-container footer button#register {
+      background-color: var(--secondary-bg-color);
+    }
+
+    .right-container footer button:hover {
+      filter: brightness(0.9);
+    }
+    .but-in button#Verify {
+        border: none;
+        height: 38px;
+        line-height: 38px;
+        width: 100%;
+        border-radius: 19px;
+        font-family: var(--font-family);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        background-color: #5966C2; /* Adjust background color as needed */
+    }
+
+    .but-in button#Verify:hover {
+        filter: brightness(0.9);
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="signup-container">
+    <div class="left-container">
+      <h1 style="color: white;"><b><B>ParamaEdu</B></b></h1>
+      <div class="brand-ambassador">
+        <img src="Logo.png" alt="Brand Ambassador">
+      </div>
+    </div>
+    <div class="right-container">
+      <header>
+        <h1>ParamaEdu Login</h1>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input id="username" type="text" placeholder="Choose a username">
+        </div>
+        <div class="but-in">
+            <button id="Verify">Send OTP</button>
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="password">OTP</label>
+          <input id="password" type="password" placeholder="Enter your password">
+        </div>
+        <div class="but-in">
+            <a href="Login-ChangePassword-staff.html"><button id="Verify">Verify</button></a>
+        </div>
+      </header>
+      <footer>
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>
